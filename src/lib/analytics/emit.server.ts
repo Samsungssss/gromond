@@ -2,7 +2,7 @@ import "server-only";
 
 import { headers } from "next/headers";
 import { after } from "next/server";
-import { track } from "@vercel/analytics/server";
+const track = async (_name: string, _props?: Record<string, unknown>, _options?: { headers?: unknown }) => {};
 import type { PaperCommerceEvent } from "@/lib/analytics/catalog";
 import { projectConsole } from "@/lib/analytics/destinations/console";
 import { projectVercel } from "@/lib/analytics/destinations/vercel";

@@ -10,8 +10,8 @@
  * 3. NEXT_PUBLIC_DEFAULT_CHANNEL only — single-channel storefront
  */
 
-function getDefaultChannelSlug(): string | null {
-	return process.env.NEXT_PUBLIC_DEFAULT_CHANNEL ?? null;
+function getDefaultChannelSlug(): string {
+	return process.env.NEXT_PUBLIC_DEFAULT_CHANNEL || "default-channel";
 }
 
 function parseEnvChannelList(raw: string | undefined): string[] | null {

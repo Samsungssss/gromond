@@ -1,6 +1,5 @@
 import { Suspense } from "react";
 import { notFound, redirect } from "next/navigation";
-import { invariant } from "ts-invariant";
 
 import { OrderConfirmationApp } from "@/checkout/order-confirmation-app";
 import { fetchCheckoutUserOnServer } from "@/checkout/lib/server/fetch-checkout-user";
@@ -24,7 +23,6 @@ export default async function OrderViewPage(props: {
 	params: Promise<{ key: string }>;
 	searchParams: Promise<{ locale?: string }>;
 }) {
-	invariant(process.env.NEXT_PUBLIC_SALEOR_API_URL, "Missing NEXT_PUBLIC_SALEOR_API_URL env variable");
 
 	const [{ key: rawKey }, searchParams] = await Promise.all([props.params, props.searchParams]);
 	const key = decodeURIComponent(rawKey);

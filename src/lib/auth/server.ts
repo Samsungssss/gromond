@@ -2,12 +2,10 @@ import "server-only";
 
 import { createSaleorAuthClient } from "@saleor/auth-sdk";
 import { cookies } from "next/headers";
-import { invariant } from "ts-invariant";
 import { ACCESS_TOKEN_MAX_AGE, REFRESH_TOKEN_MAX_AGE } from "./constants";
 import { createCookieTokenStorage } from "./cookie-token-storage";
 
-const saleorApiUrl = process.env.NEXT_PUBLIC_SALEOR_API_URL;
-invariant(saleorApiUrl, "Missing NEXT_PUBLIC_SALEOR_API_URL env variable");
+const getSaleorApiUrl = () => process.env.NEXT_PUBLIC_SALEOR_API_URL || "https://demo.saleor.io/graphql/";
 
 /**
  * Server-side cookie storage for auth tokens, with an in-memory cache layer so
@@ -16,6 +14,7 @@ invariant(saleorApiUrl, "Missing NEXT_PUBLIC_SALEOR_API_URL env variable");
  */
 const createServerCookieStorage = async () => {
 	const cookieStore = await cookies();
+	const saleorApiUrl = getSaleorApiUrl();
 
 	return createCookieTokenStorage(cookieStore, saleorApiUrl, {
 		secure: process.env.NODE_ENV === "production",
@@ -25,6 +24,7 @@ const createServerCookieStorage = async () => {
 };
 
 export const getServerAuthClient = async () => {
+	const saleorApiUrl = getSaleorApiUrl();
 	const serverCookieStorage = await createServerCookieStorage();
 	return createSaleorAuthClient({
 		saleorApiUrl,
