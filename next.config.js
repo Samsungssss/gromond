@@ -101,8 +101,8 @@ const config = {
 	},
 	typedRoutes: false,
 
-	// Output standalone for container deployment
-	output: "standalone",
+	// Output standalone for container deployment (disabled on Vercel builds)
+	output: process.env.VERCEL ? undefined : "standalone",
 
 	// Cache headers for static assets and API routes
 	async headers() {
