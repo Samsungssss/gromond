@@ -36,7 +36,7 @@ function withBrowseLocaleCookie(request: NextRequest, response: NextResponse, lo
 	return response;
 }
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
 	const { pathname } = request.nextUrl;
 
 	if (
