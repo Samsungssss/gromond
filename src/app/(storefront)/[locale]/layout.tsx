@@ -3,7 +3,7 @@ import { type ReactNode } from "react";
 import { type Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+const SpeedInsights = (_props: { sampleRate?: number }) => null;
 import { rootMetadata } from "@/lib/seo";
 import { getConfiguredLocaleChannelPairs } from "@/config/locale-channel";
 import {

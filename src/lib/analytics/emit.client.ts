@@ -1,6 +1,6 @@
 "use client";
 
-import { track } from "@vercel/analytics";
+const track = (_name: string, _props?: Record<string, unknown>) => {};
 import { sendGa4Event } from "@/lib/analytics/browser";
 import type { PaperCommerceEvent } from "@/lib/analytics/catalog";
 import { projectConsole } from "@/lib/analytics/destinations/console";

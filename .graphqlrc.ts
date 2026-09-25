@@ -17,13 +17,19 @@
  * - Always run `pnpm run generate` after changing GraphQL queries
  */
 import { loadEnvConfig } from "@next/env";
+import fs from "node:fs";
 import type { CodegenConfig } from "@graphql-codegen/cli";
 
 loadEnvConfig(process.cwd());
 
 let schemaUrl = process.env.NEXT_PUBLIC_SALEOR_API_URL;
 
-if (process.env.GITHUB_ACTION === "generate-schema-from-file") {
+if (
+	process.env.GITHUB_ACTION === "generate-schema-from-file" ||
+	!schemaUrl ||
+	schemaUrl.includes("your-instance.saleor.cloud") ||
+	fs.existsSync("schema.graphql")
+) {
 	schemaUrl = "schema.graphql";
 }
 

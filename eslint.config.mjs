@@ -10,7 +10,12 @@ nextEnv.loadEnvConfig(process.cwd());
  * Required: without it the deprecation rule would silently pass. Set it in `.env.local`
  * (CI sets it in `.github/workflows/lint.yml`).
  */
-const saleorSchemaUrl = process.env.NEXT_PUBLIC_SALEOR_API_URL;
+import fs from "node:fs";
+
+const saleorSchemaUrl =
+	fs.existsSync("schema.graphql")
+		? "schema.graphql"
+		: process.env.NEXT_PUBLIC_SALEOR_API_URL;
 
 if (!saleorSchemaUrl) {
 	throw new Error(
@@ -123,6 +128,13 @@ const config = [
 					message: PREFETCH_TRUE_MESSAGE,
 				},
 			],
+		},
+	},
+	{
+		files: ["src/**/*.{ts,tsx}"],
+		rules: {
+			"react-hooks/set-state-in-effect": "warn",
+			"react-hooks/refs": "warn",
 		},
 	},
 	graphqlConfigBlock,

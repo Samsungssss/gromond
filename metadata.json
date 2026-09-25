@@ -1,0 +1,7 @@
+{
+  "name": "Saleor Storefront",
+  "description": "High-performance headless e-commerce storefront powered by Saleor and Next.js",
+  "prompt": "Saleor Storefront",
+  "permissions": [],
+  "capabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

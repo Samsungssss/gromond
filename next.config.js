@@ -101,13 +101,8 @@ const config = {
 	},
 	typedRoutes: false,
 
-	// Used in the Dockerfile
-	output:
-		process.env.NEXT_OUTPUT === "standalone"
-			? "standalone"
-			: process.env.NEXT_OUTPUT === "export"
-				? "export"
-				: undefined,
+	// Output standalone for container deployment
+	output: "standalone",
 
 	// Cache headers for static assets and API routes
 	async headers() {

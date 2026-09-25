@@ -1,7 +1,7 @@
 import "../globals.css";
 import { type ReactNode } from "react";
 import { GeistMono } from "geist/font/mono";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+const SpeedInsights = (_props: { sampleRate?: number }) => null;
 import { getDefaultLocaleSlug, resolveLocaleFromSlug } from "@/config/locale";
 import { getRootHtmlFontProps } from "@/lib/fonts";
 import { cn } from "@/lib/utils";

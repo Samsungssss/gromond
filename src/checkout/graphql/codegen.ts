@@ -3,12 +3,22 @@
  *
  * Run: pnpm generate:checkout
  */
+import fs from "node:fs";
 import { loadEnvConfig } from "@next/env";
 import type { CodegenConfig } from "@graphql-codegen/cli";
 
 loadEnvConfig(process.cwd());
 
-const schemaUrl = process.env.NEXT_PUBLIC_SALEOR_API_URL;
+let schemaUrl = process.env.NEXT_PUBLIC_SALEOR_API_URL;
+
+if (
+	process.env.GITHUB_ACTION === "generate-schema-from-file" ||
+	!schemaUrl ||
+	schemaUrl.includes("your-instance.saleor.cloud") ||
+	fs.existsSync("schema.graphql")
+) {
+	schemaUrl = "schema.graphql";
+}
 
 if (!schemaUrl) {
 	console.error("Missing NEXT_PUBLIC_SALEOR_API_URL environment variable");
