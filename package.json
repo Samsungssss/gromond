@@ -119,14 +119,5 @@
   },
   "overrides": {
     "graphql": "16.8.1"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@parcel/watcher",
-      "@swc/core",
-      "esbuild",
-      "sharp",
-      "unrs-resolver"
-    ]
   }
 }
