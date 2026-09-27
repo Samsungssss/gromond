@@ -1,0 +1,6 @@
+{
+  "name": "Saleor Paper Storefront",
+  "description": "Modern headless e-commerce storefront powered by Saleor and Next.js",
+  "permissions": [],
+  "capabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
