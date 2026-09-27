@@ -28,7 +28,7 @@ export function OrderConfirmationPageShell({ children, storefrontChannel }: Orde
 							channel={storefrontChannel}
 							className="flex items-center"
 						>
-							<Logo className="h-7 w-auto" />
+							<Logo className="h-9 w-auto" />
 						</StorefrontHomeLink>
 
 						<div className="flex items-center gap-1.5 text-muted-foreground">

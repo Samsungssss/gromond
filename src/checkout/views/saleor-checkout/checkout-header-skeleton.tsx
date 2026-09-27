@@ -19,7 +19,7 @@ export function CheckoutHeaderSkeleton({ step = 1, totalSteps = 3 }: CheckoutHea
 		<header className="bg-background md:border-b md:border-border">
 			<div className="mx-auto max-w-7xl px-4 pt-4 sm:px-6 md:pb-4 md:pt-4 lg:px-8">
 				<div className="flex items-center justify-between">
-					<Logo className="h-7 w-auto" />
+					<Logo className="h-9 w-auto" />
 
 					<nav className="hidden items-center gap-2 md:flex" aria-hidden="true">
 						{Array.from({ length: totalSteps }, (_, i) => (

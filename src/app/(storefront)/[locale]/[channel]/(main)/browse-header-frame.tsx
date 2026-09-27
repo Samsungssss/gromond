@@ -22,7 +22,7 @@ function HeaderActionsSkeleton() {
 function HeaderLogoFallback() {
 	return (
 		<div className="flex shrink-0 items-center" aria-hidden="true">
-			<SharedLogo className="h-7 w-auto" />
+			<SharedLogo className="h-9 w-auto" />
 		</div>
 	);
 }

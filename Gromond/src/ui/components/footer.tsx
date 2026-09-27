@@ -46,7 +46,7 @@ export async function Footer({ locale, channel }: { locale: string; channel: str
 					{/* Brand */}
 					<div className="col-span-2 md:col-span-1">
 						<Link href={buildStorefrontPath(locale, channel)} className="mb-4 inline-block">
-							<Logo className="h-7 w-auto" inverted />
+							<Logo className="h-9 w-auto" inverted />
 						</Link>
 						<p className="mt-4 max-w-xs text-sm leading-relaxed text-inverse-subtle">{brandConfig.tagline}</p>
 					</div>

@@ -43,7 +43,7 @@ export function CheckoutHeader({
 						channel={storefrontChannel}
 						className="flex items-center"
 					>
-						<Logo className="h-7 w-auto" />
+						<Logo className="h-9 w-auto" />
 					</StorefrontHomeLink>
 
 					{/* Progress Steps - Desktop */}

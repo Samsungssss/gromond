@@ -92,7 +92,7 @@ export function ProductImageViewer({
 
 				<div className="relative isolate flex h-[100dvh] w-full flex-col overflow-hidden bg-background">
 					<header className="relative z-20 flex shrink-0 items-center justify-between px-4 pb-2 pt-4">
-						<Logo className="h-6 w-auto" ariaLabel="" />
+						<Logo className="h-8 w-auto" ariaLabel="" />
 						<DialogCloseButton className="text-foreground hover:bg-accent" aria-label={t("close")} />
 					</header>
 
