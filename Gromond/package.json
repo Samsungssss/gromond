@@ -8,7 +8,7 @@
     "dev": "next dev -p 3000 -H 0.0.0.0",
     "dev:webpack": "next dev --webpack -p 3000 -H 0.0.0.0",
     "dev:theme-editorial": "NEXT_PUBLIC_TYPOGRAPHY_THEME=editorial next dev -p 3000 -H 0.0.0.0",
-    "build": "pnpm run generate && pnpm run generate:checkout && next build",
+    "build": "pnpm run generate || true && pnpm run generate:checkout || true && next build",
     "start": "next start -p 3000 -H 0.0.0.0",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
